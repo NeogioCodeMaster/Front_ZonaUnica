@@ -1,0 +1,60 @@
+<form  [formGroup]="frmRegSitio" (ngSubmit)="saveRegSitio()">
+    <div class="row">
+
+        <div class="col">
+          <div class="mb-3">
+            <input type="hidden" formControlName="nombre" class="form-control" id="id" >
+          </div>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" formControlName="nombre" class="form-control" id="nombre" >
+              <ng-container *ngFor="let validation of validationMessage.nombre">
+                <div *ngIf="frmRegSitio.controls['nombre'].hasError(validation.type) && (frmRegSitio.controls['nombre'].dirty || frmRegSitio.controls['nombre'].touched)">
+                    <small class="text-danger">{{validation.message}}</small>
+                </div>
+              </ng-container>
+            </div>
+    
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <input type="text" formControlName="descripcion" class="form-control" id="descripcion">
+              <ng-container *ngFor="let validation of validationMessage.descripcion">
+                <div *ngIf="frmRegSitio.controls['descripcion'].hasError(validation.type) && (frmRegSitio.controls['descripcion'].dirty || frmRegSitio.controls['descripcion'].touched)">
+                    <small class="text-danger">{{validation.message}}</small>
+                </div>
+              </ng-container>
+            </div>
+
+            <!-- <div class="mb-3">
+                <label for="InputFoto" class="form-label">Foto</label>
+                <input type="file" class="form-control" id="InputFoto">
+              </div> -->
+              
+              <div class="input-group mb-4 mt-4">
+                  <div class="input-group-append">
+                      <label class="input-group-text" for="plato">Platos Típicos</label>
+                    </div>
+                  <select class="custom-select" id="plato" formControlName="plato">
+                      <option selected>Selecciona...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                    
+                </div>
+                <div class="input-group mb-4 mt-5">
+                  <div class="input-group-append">
+                      <label class="input-group-text" for="municipio">Municipio</label>
+                    </div>
+                  <select class="custom-select" id="inputMunicipio" formControlName="municipio">
+                      <option selected>Selecciona...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+                    
+                </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary btnGuardar" routerLink="sitios" id="btnGuardar">Guardar</button>
+</form>

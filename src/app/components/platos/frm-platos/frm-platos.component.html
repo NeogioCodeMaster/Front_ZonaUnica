@@ -1,0 +1,17 @@
+
+        <form [formGroup]="frmPlato" (ngSubmit)="enviar()">
+            <div class="mb-3">
+                <input type="hidden" class="form-control" placeholder="Escriba nombre del plato típico" formControlName="id">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre Plato Típico</label>
+                <input type="text" class="form-control" placeholder="Escriba nombre del plato típico" formControlName="nombre">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Descripción</label>
+                <textarea class="form-control" placeholder="Escriba descripción del plato típico" formControlName="descripcion" style="height: 100px">                
+                </textarea>
+            </div>
+                 <button  type="submit" class="btn btn-primary">{{lableBtn}}</button>
+            
+        </form>

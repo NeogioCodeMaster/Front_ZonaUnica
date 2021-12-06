@@ -1,0 +1,35 @@
+<form [formGroup]="frmMunicipio" (ngSubmit)=saveMunincipio()>
+    <div class="row">
+  
+        <div class="col">
+            <div class="mb-3">
+              <!-- <label for="inputId" class="form-label" >Id</label> -->
+              <input type="hidden" class="form-control" id="inputId" formControlName="id">
+            </div>
+
+            <div class="mb-3">
+              <label for="InputNombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="InputNombre" formControlName="nombre">
+            </div>
+    
+           <div class="mb-3">
+              <label for="InputDescripcion" class="form-label">Descripción</label>
+              <input type="text" class="form-control" id="InputDescripcion" formControlName="descripcion">
+            </div>
+  
+              <div class="input-group mb-4 mt-5">
+                <div class="input-group-append">
+                    <label class="input-group-text" for="inputMunicipio">Departamento</label>
+                  </div>
+                <select class="custom-select" id="inputMunicipio" formControlName="departamento">
+                    <option selected [ngValue]="null">Selecciona...</option>
+                    <option *ngFor="let item of municipiosDropD">{{item}}</option>
+                    
+  
+                  </select>
+                  
+              </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>

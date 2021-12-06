@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/FZonaUnica'),
+      dir: require('path').join(__dirname, './coverage/zonaUnicaC4'),
       subdir: '.',
       reporters: [
         { type: 'html' },

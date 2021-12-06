@@ -1,0 +1,25 @@
+<div class="tablewidth">
+
+    <table class="table">
+        <thead>
+            <th class="col">Nombre</th>
+            <th class="col">Descripción</th>
+            <th class="col">Departamento</th>
+            <th class="col"></th>
+            <th class="col"></th>
+        </thead>
+        <tbody *ngFor="let item of municipios">
+            <tr>
+                <td>{{item.nombre}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>{{item.departamento}}</td>
+                <td><a class="btn btn-outline-primary" (click)="editar(item)">Editar</a></td>
+                <td><a class="btn btn-outline-danger" (click)="eliminar(item)">Eliminar</a></td>
+                
+            </tr>
+        </tbody>
+    </table>
+    <div *ngIf="estado" class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+</div>

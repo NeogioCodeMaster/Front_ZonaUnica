@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col ">
+            <h1 class="mainTitle">Ingrese Municipio</h1>
+            <app-frm-municipio [municipio]="auxMunicipio" (nuevoMunicipio)= "saveMunicipio($event)"></app-frm-municipio>
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col ">
+            <h1 class="mainTitle">Lista de Municipios</h1>
+            <app-lts-municipio [municipios]= "municipios" (onEdit)="editar($event)" (onDelete)="eliminar($event)"></app-lts-municipio>
+        </div>
+    </div>
+</div>

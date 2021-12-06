@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1 class="mainTitle">Sitios Turísticos</h1>
+          </div>
+          <div class="col-5">
+          </div>
+          <div class="col">
+            <!-- <button type="button" class="btn btn-outline-primary float-right" routerLink="sitioNuevo">+ Agregar nuevo Sitio</button> -->
+            <!-- <a routerLink="sitioNuevo" class="btn btn-primary stretched-link">+Agregar</a> -->
+            <button type="button" class="btn btn-outline-primary float-right" data-toggle="modal" data-target="#staticBackdrop" (click)="addSitio()">
+                + Agregar nuevo Sitio
+              </button>
+              <!--Modal-->
+              <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Agregar Nuevo sitio</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeAddSitio()">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <app-frm-sitios (nuevoRegSitio)="saveRegSitio($event)" [sitioEditar]="auxSitio"></app-frm-sitios>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeAddSitio()">Cerrar</button>
+                        <!-- <button type="button" class="btn btn-primary">Understood</button> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          <div class="col-12">
+              <!--
+            <ul class="nav">
+                <li class="nav-item">
+                    <h1 class="mainTitle">Sitios Turísticos</h1>
+                  <a class="nav-link" aria-current="page" routerLink="ltsSitios" routerLinkActive="router-link-active"><h1>Sitios Turísticos</h1></a>
+                </li>
+                <li class="nav-item d-flex justify-content-end itemleft">
+                  <a class="nav-link ainli" routerLink="sitioNuevo" routerLinkActive="router-link-active">+ Agregar nuevo Sitio</a>
+                </li>
+                
+              </ul>
+              -->
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-card-sitios [sitios]="sitios" (onEdit)="editar($event)" (onDelete)="deleteSitio($event)"></app-card-sitios>
+        </div>
+        
+        <router-outlet></router-outlet>
+</div>
+</div>  

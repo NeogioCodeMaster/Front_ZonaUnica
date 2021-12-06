@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row mt-5">
+        <div class="col ">
+            <h1 class="mainTitle">Ingrese Plato Típico</h1>
+            <app-frm-platos [plato]="auxPlato" [lable]="lable" (onNuevoPlato)="enviar($event)"></app-frm-platos>
+            <p class="mt-5">{{mensaje}}</p>
+            
+        </div>
+        <div class="col-1">
+            
+        </div>
+        <div class="col ">
+            <h1 class="mainTitle">Lista de Platos</h1>
+            <app-lts-platos [platos]="platos"  (onEdit)="editar($event)" (Btn)="editarBtn($event)" (onDelete)="eliminarPlato($event)"> </app-lts-platos>
+            
+        </div>
+    </div>
+</div>

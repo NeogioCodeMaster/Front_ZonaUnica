@@ -1,0 +1,18 @@
+
+<table class="table">
+   <thead>
+     <tr>
+         <th>Nombre Plato Típico</th>
+         <th >Descripción</th>
+         <th >Acción</th>
+       </tr>
+   </thead>
+   <tbody *ngFor="let plato of platos">
+       <tr>
+           <td>{{plato.nombre}}</td>
+           <td>{{plato.descripcion}}</td>
+           <td><a class="btn btn-outline-primary" (click)="editar(plato)">Editar</a></td>
+           <td><a class="btn btn-outline-danger" (click)="eliminar(plato)">Eliminar</a></td>
+       </tr>
+   </tbody>
+</table>
