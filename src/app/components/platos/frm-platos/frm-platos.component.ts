@@ -43,11 +43,11 @@ export class FrmPlatosComponent implements OnInit {
   enviar(){
     if(this.frmPlato.valid){
       this.onNuevoPlato.emit(this.frmPlato.value)
-      console.log(this.frmPlato.value)
-      //this.ngOnInit();
-      this.lableBtn = "Guardar Plato Típico";
+      //console.log(this.frmPlato.value)
+      this.ngOnInit();
+      this.lableBtn = "Guardar Plato Típico";  
     }else{
-      alert('No pueden haber campos vacios')
+      alert('Hay campos obligatorios sin diligenciar')
     }
    }
 

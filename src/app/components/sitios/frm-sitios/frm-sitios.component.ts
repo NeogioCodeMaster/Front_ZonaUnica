@@ -24,7 +24,6 @@ export class FrmSitiosComponent implements OnInit {
   }
   constructor(private fb: FormBuilder, private sitioServ: SitioServiceService) { 
     this.frmRegSitio=this.fb.group({
-      id: new FormControl(''),
       nombre: new FormControl('', Validators.compose([Validators.required])),
       descripcion: new FormControl('', Validators.compose([Validators.required])),
       // fotos: new FormControl('', Validators.compose([Validators.required])),
@@ -41,7 +40,7 @@ export class FrmSitiosComponent implements OnInit {
   }
 
   ngOnChanges(changes: SimpleChanges){
-    this.frmRegSitio=this.fb.group({
+    this.frmRegSitio=this.fb.group({ // Acá se genera un error en el html, al parecer por una vuelta inicial que tiene los campos nulos. 
       id:[this.sitioEditar.id],
       nombre:[this.sitioEditar.nombre, Validators.required],
       descripcion:[this.sitioEditar.descripcion, Validators.required],
@@ -55,7 +54,7 @@ export class FrmSitiosComponent implements OnInit {
       this.nuevoRegSitio.emit(this.frmRegSitio.value);
       this.InitFrm();
     }else{
-      console.log("El form no funciona")
+      //console.log("El form no funciona")
       alert("No pueden haber campos vacios")
     }
   }
@@ -92,7 +91,7 @@ export class FrmSitiosComponent implements OnInit {
         })
       })
     }else{
-      console.log("No hay Sitio seleccionado")
+      alert("Debe elegir un Sitio de la lista para poder Editar")
     }
   }
 }
